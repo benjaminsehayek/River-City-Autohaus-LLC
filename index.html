@@ -5,14 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maria del Rosario Castillo Santiago Vancouver WA Marketer</title>
   <meta name="description" content="Maria del Rosario Castillo, especialista en marketing digital en Vancouver, WA. Estrategias de SEO, publicidad y contenido para hacer crecer tu negocio.">
+  <style>
+    :root {
+      --pink: #ec407a;
+      --pink-dark: #c2185b;
+      --pink-light: #fce4ec;
+      --white: #ffffff;
+      --text: #3a2c31;
+    }
 
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    #sobre-mi {
+      background: linear-gradient(135deg, var(--pink-light) 0%, var(--white) 100%);
+      max-width: none;
+      text-align: center;
+    }
+
+    #sobre-mi > * {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      color: var(--pink-dark);
+      font-size: 2rem;
+    }
+
+    h2 {
+      color: var(--pink-dark);
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.4rem;
+      display: inline-block;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: var(--pink-light);
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--pink);
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .portfolio-card {
+      background: var(--white);
+      border: 1px solid var(--pink-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(236, 64, 122, 0.12);
+    }
+
+    .portfolio-placeholder {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pink-dark);
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--pink-light),
+        var(--pink-light) 12px,
+        var(--white) 12px,
+        var(--white) 24px
+      );
+    }
+
+    .portfolio-card h3 {
+      color: var(--pink-dark);
+      margin: 1rem 1rem 0.25rem;
+    }
+
+    .portfolio-card p {
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* WhatsApp button */
+    .whatsapp-btn {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.85rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: var(--pink-dark);
+    }
+  </style>
 </head>
 <body>
 
   <section id="sobre-mi">
     <h1>Maria del Rosario Castillo Santiago - Especialista en Marketing Digital en Vancouver, WA</h1>
-    <p>Soy Maria del Rosario Castillo Santiago, una profesional en marketing digital 
-    con sede en Vancouver, WA. Mi objetivo es ayudar a negocios locales a crecer 
+    <p>Soy Maria del Rosario Castillo Santiago, una profesional en marketing digital
+    con sede en Vancouver, WA. Mi objetivo es ayudar a negocios locales a crecer
     su presencia en línea y atraer más clientes.</p>
   </section>
 
@@ -27,11 +148,27 @@
     </ul>
   </section>
 
+  <section id="trabajos">
+    <h2>Trabajos Anteriores</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder">Imagen del trabajo<br>Five Star Auto Body</div>
+        <h3>Five Star Auto Body</h3>
+        <p>Marketing digital y campañas publicitarias para el taller de carrocería.</p>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder">Imagen del trabajo<br>Crown Electric</div>
+        <h3>Crown Electric</h3>
+        <p>Estrategia de marketing y generación de clientes para el servicio eléctrico.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto">
     <h2>Contáctame</h2>
     <p>¿Listo para hacer crecer tu negocio? Escríbeme directamente por WhatsApp.</p>
-    <a href="https://wa.me/523141707687?text=Hola,%20me%20interesa%20un%20servicio" 
-       target="_blank" 
+    <a href="https://wa.me/523141707687?text=Hola,%20me%20interesa%20un%20servicio"
+       target="_blank"
        class="whatsapp-btn">
       💬 Chatea con nosotros
     </a>
