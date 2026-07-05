@@ -1,0 +1,126 @@
+/* River City Auto Haus — shared styles */
+:root{
+  --navy:#16232f;
+  --navy-2:#1f3242;
+  --red:#c8102e;
+  --red-dark:#a30d26;
+  --ink:#26303a;
+  --muted:#5b6673;
+  --line:#e3e8ee;
+  --bg:#f6f8fa;
+  --white:#ffffff;
+  --max:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.65;background:var(--white)}
+img{max-width:100%;display:block}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;color:var(--navy)}
+h1{font-size:2.1rem}
+h2{font-size:1.55rem;margin-bottom:.75rem}
+h3{font-size:1.1rem;margin-bottom:.35rem}
+p{margin-bottom:1rem}
+ul{margin:0 0 1rem 1.25rem}
+li{margin-bottom:.4rem}
+section{padding:52px 0}
+section.alt{background:var(--bg)}
+.lead{font-size:1.12rem;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 26px;border-radius:6px;letter-spacing:.02em}
+.btn:hover{background:var(--red-dark);text-decoration:none}
+.btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.small{padding:9px 18px;font-size:.9rem}
+
+/* Top bar */
+.topbar{background:var(--navy);color:#cfd8e0;font-size:.85rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;gap:12px;flex-wrap:wrap}
+.topbar a{color:#fff;font-weight:700}
+
+/* Header / nav */
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:.01em}
+.brand span{color:var(--red)}
+.brand:hover{text-decoration:none}
+.nav-toggle{display:none}
+.nav-toggle-label{display:none;cursor:pointer;font-weight:700;color:var(--navy);border:1px solid var(--line);padding:6px 14px;border-radius:6px}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;margin:0}
+.nav-links li{margin:0}
+.nav-links>li>a{color:var(--navy);font-weight:600;font-size:.95rem}
+.nav-links>li>a:hover{color:var(--red);text-decoration:none}
+.has-dropdown{position:relative}
+.dropdown{display:none;position:absolute;top:100%;left:-14px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 28px rgba(22,35,47,.14);list-style:none;margin:0;padding:8px 0;min-width:250px;z-index:60}
+.has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown{display:block}
+.dropdown li{margin:0}
+.dropdown a{display:block;padding:8px 18px;color:var(--ink);font-size:.92rem}
+.dropdown a:hover{background:var(--bg);color:var(--red);text-decoration:none}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#2a4256 100%);color:#e8edf2;padding:72px 0}
+.hero h1{color:#fff;margin-bottom:.75rem}
+.hero p{max-width:720px;font-size:1.15rem;color:#c9d4de}
+.hero .cta-row{margin-top:1.5rem;display:flex;gap:14px;flex-wrap:wrap}
+.hero .kicker{display:inline-block;background:rgba(200,16,46,.18);border:1px solid rgba(200,16,46,.5);color:#ffb3bf;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
+
+/* Cards */
+.grid{display:grid;gap:20px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3 a{color:var(--navy)}
+.card h3 a:hover{color:var(--red);text-decoration:none}
+.card p{margin-bottom:.5rem;font-size:.95rem;color:var(--muted)}
+.card .more{font-size:.9rem;font-weight:700}
+section.alt .card{border-color:#d9e0e7}
+
+/* Checklist / symptoms */
+.checklist{list-style:none;margin-left:0}
+.checklist li{padding-left:1.6em;position:relative}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:800}
+
+/* FAQ */
+details{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;background:#fff}
+summary{cursor:pointer;font-weight:700;padding:14px 18px;color:var(--navy)}
+details p{padding:0 18px 14px;margin:0;color:var(--muted)}
+
+/* CTA band */
+.cta-band{background:var(--red);color:#fff;text-align:center;padding:56px 0}
+.cta-band h2{color:#fff}
+.cta-band p{color:#ffd9df;max-width:640px;margin:0 auto 1.25rem}
+.cta-band .btn{background:#fff;color:var(--red)}
+.cta-band .btn:hover{background:var(--bg)}
+
+/* Footer */
+.site-footer{background:var(--navy);color:#aeb9c4;font-size:.9rem;padding:56px 0 24px}
+.site-footer h4{color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.site-footer ul{list-style:none;margin:0}
+.site-footer a{color:#aeb9c4}
+.site-footer a:hover{color:#fff}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:32px;margin-bottom:36px}
+.footer-bottom{border-top:1px solid #2b3d4d;padding-top:18px;font-size:.82rem;color:#7f8d9a}
+
+/* Breadcrumbs */
+.crumbs{font-size:.85rem;color:#9fb0bf;margin-bottom:1rem}
+.crumbs a{color:#c9d4de}
+
+/* Responsive */
+@media(max-width:900px){
+  .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  h1{font-size:1.65rem}
+  .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+  .nav-toggle-label{display:block}
+  .nav-links{display:none;flex-direction:column;align-items:flex-start;width:100%;gap:0;padding-top:12px}
+  .nav-toggle:checked~.nav-links{display:flex}
+  .nav-links>li{width:100%;border-top:1px solid var(--line)}
+  .nav-links>li>a{display:block;padding:12px 4px}
+  .dropdown{display:block;position:static;border:none;box-shadow:none;padding:0 0 8px 14px;min-width:0}
+  .footer-grid{grid-template-columns:1fr}
+}
