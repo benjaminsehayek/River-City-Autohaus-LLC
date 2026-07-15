@@ -73,6 +73,8 @@ section.alt{background:var(--bg)}
 .hero .cta-row{margin-top:1.5rem;display:flex;gap:14px;flex-wrap:wrap}
 .hero .kicker{display:inline-block;background:rgba(200,16,46,.18);border:1px solid rgba(200,16,46,.5);color:#ffb3bf;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
 @media(max-width:680px){.hero-video--desktop{display:none}.hero-video--mobile{display:block}}
+/* Desktop: hero fills the screen on first load (viewport minus topbar + sticky header) */
+@media(min-width:681px){.hero{min-height:calc(100vh - 123px);display:flex;align-items:center;padding:56px 0}}
 
 /* Cards */
 .grid{display:grid;gap:20px}
