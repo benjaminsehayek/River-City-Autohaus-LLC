@@ -61,6 +61,8 @@ section.alt{background:var(--bg)}
 .dropdown li{margin:0}
 .dropdown a{display:block;padding:8px 18px;color:var(--ink);font-size:.92rem}
 .dropdown a:hover{background:var(--bg);color:var(--red);text-decoration:none}
+/* Mobile dropdown toggle (hidden on desktop; hover handles desktop) */
+.dd-check,.dd-caret{display:none}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#2a4256 100%);color:#e8edf2;padding:72px 0}
@@ -143,6 +145,12 @@ details p{padding:0 18px 14px;margin:0;color:var(--muted)}
   .nav-toggle:checked~.nav-links{display:flex}
   .nav-links>li{width:100%;border-top:1px solid var(--line)}
   .nav-links>li>a{display:block;padding:12px 4px}
-  .dropdown{display:block;position:static;border:none;box-shadow:none;padding:0 0 8px 14px;min-width:0}
+  /* Collapse dropdowns by default; expand only when the caret is tapped */
+  .dropdown{display:none;position:static;border:none;box-shadow:none;padding:0 0 8px 14px;min-width:0}
+  .has-dropdown:hover>.dropdown,.has-dropdown:focus-within>.dropdown{display:none}
+  .dd-check:checked~.dropdown{display:block}
+  .dd-caret{display:flex;align-items:center;justify-content:center;position:absolute;top:0;right:0;width:52px;height:47px;cursor:pointer;color:var(--navy)}
+  .dd-caret::before{content:"▾";font-size:.85rem;line-height:1}
+  .dd-check:checked~.dd-caret::before{content:"▴"}
   .footer-grid{grid-template-columns:1fr}
 }
