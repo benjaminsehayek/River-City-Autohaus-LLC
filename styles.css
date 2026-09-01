@@ -37,11 +37,6 @@ section.alt{background:var(--bg)}
 .btn.ghost:hover{background:rgba(255,255,255,.12)}
 .btn.small{padding:9px 18px;font-size:.9rem}
 
-/* Top bar */
-.topbar{background:var(--navy);color:#cfd8e0;font-size:.85rem}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;gap:12px;flex-wrap:wrap}
-.topbar a{color:#fff;font-weight:700}
-
 /* Header / nav */
 .site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .nav{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
@@ -55,17 +50,19 @@ section.alt{background:var(--bg)}
 .nav-links li{margin:0}
 .nav-links>li>a{color:var(--navy);font-weight:600;font-size:.95rem}
 .nav-links>li>a:hover{color:var(--red);text-decoration:none}
+.nav-links>li>a.btn,.nav-links>li>a.btn:hover{color:#fff}
 .has-dropdown{position:relative}
+.has-dropdown>a::after{content:"▾";font-size:1.3em;margin-left:5px;position:relative;top:-1px}
 .dropdown{display:none;position:absolute;top:100%;left:-14px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 28px rgba(22,35,47,.14);list-style:none;margin:0;padding:8px 0;min-width:250px;z-index:60}
 .has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown{display:block}
 .dropdown li{margin:0}
-.dropdown a{display:block;padding:8px 18px;color:var(--ink);font-size:.92rem}
+.dropdown a{display:block;padding:8px 18px;color:var(--ink);font-size:.92rem;font-weight:600}
 .dropdown a:hover{background:var(--bg);color:var(--red);text-decoration:none}
 /* Mobile dropdown toggle (hidden on desktop; hover handles desktop) */
 .dd-check,.dd-caret{display:none}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#2a4256 100%);color:#e8edf2;padding:72px 0}
+.hero{position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#2a4256 100%);color:#e8edf2;padding:72px 0}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
 .hero-video--mobile{display:none}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(11,26,40,.9) 0%,rgba(16,35,52,.78) 55%,rgba(30,52,72,.66) 100%)}
@@ -73,16 +70,16 @@ section.alt{background:var(--bg)}
 .hero h1{color:#fff;margin-bottom:.75rem}
 .hero p{max-width:720px;font-size:1.15rem;color:#c9d4de}
 .hero .cta-row{margin-top:1.5rem;display:flex;gap:14px;flex-wrap:wrap}
-.hero .kicker{display:inline-block;background:rgba(200,16,46,.18);border:1px solid rgba(200,16,46,.5);color:#ffb3bf;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
+.hero .kicker{display:inline-block;color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
 @media(max-width:680px){.hero-video--desktop{display:none}.hero-video--mobile{display:block}}
-/* Desktop: hero fills the screen on first load (viewport minus topbar + sticky header) */
-@media(min-width:681px){.hero{min-height:calc(100vh - 123px);display:flex;align-items:center;padding:56px 0}}
+/* Desktop: hero fills the screen on first load (viewport minus sticky header) */
+@media(min-width:681px){.hero{min-height:calc(100vh - 87px);display:flex;align-items:center;padding:56px 0}}
 
 /* Cards */
 .grid{display:grid;gap:20px}
 .grid.cols-3{grid-template-columns:repeat(3,1fr)}
 .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+.card{background:#fff;border:2px solid var(--line);border-radius:10px;padding:22px}
 .card h3 a{color:var(--navy)}
 .card h3 a:hover{color:var(--red);text-decoration:none}
 .card p{margin-bottom:.5rem;font-size:.95rem;color:var(--muted)}
@@ -106,6 +103,10 @@ details p{padding:0 18px 14px;margin:0;color:var(--muted)}
 .photo.right{max-width:480px;float:right;margin:0 0 16px 28px}
 .photo.tall.right{max-width:360px}
 @media(max-width:680px){.photo.right,.photo.tall.right{float:none;max-width:none;margin:0 0 1rem}}
+/* Split row: text column vertically centered beside a photo */
+.split{display:grid;grid-template-columns:1fr minmax(0,480px);gap:36px;align-items:center}
+.split .photo{margin:0}
+@media(max-width:680px){.split{grid-template-columns:1fr;gap:22px}.split .photo{order:-1}}
 
 /* Workshop flyer */
 .flyer{max-width:600px;margin:0 auto;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 14px 40px rgba(22,35,47,.18);background:#fff}
@@ -120,13 +121,15 @@ details p{padding:0 18px 14px;margin:0;color:var(--muted)}
 .cta-band .btn:hover{background:var(--bg)}
 
 /* Footer */
-.site-footer{background:var(--navy);color:#aeb9c4;font-size:.9rem;padding:56px 0 24px}
-.site-footer h4{color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.site-footer{background:var(--navy);color:#aeb9c4;font-size:.86rem;padding:34px 0 16px}
+.site-footer h4{color:#fff;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
 .site-footer ul{list-style:none;margin:0}
+.site-footer li{margin-bottom:.22rem}
+.site-footer p{margin-bottom:.5rem}
 .site-footer a{color:#aeb9c4}
 .site-footer a:hover{color:#fff}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:32px;margin-bottom:36px}
-.footer-bottom{border-top:1px solid #2b3d4d;padding-top:18px;font-size:.82rem;color:#7f8d9a}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1.15fr .95fr .9fr;gap:24px;margin-bottom:22px}
+.footer-bottom{border-top:1px solid #2b3d4d;padding-top:12px;font-size:.78rem;color:#7f8d9a}
 
 /* Breadcrumbs */
 .crumbs{font-size:.85rem;color:#9fb0bf;margin-bottom:1rem}
@@ -145,6 +148,7 @@ details p{padding:0 18px 14px;margin:0;color:var(--muted)}
   .nav-toggle:checked~.nav-links{display:flex}
   .nav-links>li{width:100%;border-top:1px solid var(--line)}
   .nav-links>li>a{display:block;padding:12px 4px}
+  .has-dropdown>a::after{display:none}
   /* Collapse dropdowns by default; expand only when the caret is tapped */
   .dropdown{display:none;position:static;border:none;box-shadow:none;padding:0 0 8px 14px;min-width:0}
   .has-dropdown:hover>.dropdown,.has-dropdown:focus-within>.dropdown{display:none}
